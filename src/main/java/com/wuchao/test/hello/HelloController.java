@@ -14,5 +14,10 @@ public class HelloController {
     	
         return "hello, world! This com from spring!";
     }
+    @RequestMapping("/login")
+    public String login() {
+    	
+        return "login";
+    }
 
 }

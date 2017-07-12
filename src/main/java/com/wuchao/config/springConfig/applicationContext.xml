@@ -3,19 +3,25 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
                            http://www.springframework.org/schema/tx
                            http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
                            http://www.springframework.org/schema/aop
                            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+                           http://www.springframework.org/schema/mvc 
+                           http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd 
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context-4.0.xsd
                            http://www.springframework.org/schema/jee 
                            http://www.springframework.org/schema/jee/spring-jee-4.0.xsd">
+                           
 	<!-- 设置使用注解的类所在的jar包 将带有@Component、@Repository、@Service、@Controller标签的类自动注册到spring容器。 
 		对标记了 Spring's @Required、@Autowired、JSR250's @PostConstruct、@PreDestroy、 @Resource、JAX-WS's 
-		@WebServiceRef、EJB3's @EJB、JPA's @PersistenceContext、 @PersistenceUnit等注解的类进行对应的操作使注解生效（包含了annotation-config标签的作用）。 -->
+		@WebServiceRef、EJB3's @EJB、JPA's @PersistenceContext、 @PersistenceUnit等注解的类进行对应的操作使注解生效（包含了annotation-config标签的作用）。 -->	
+	<!-- 用于静态资源的访问，否则无法访问静态资源 -->
+	<mvc:default-servlet-handler/>
 	<context:component-scan base-package="com.wuchao" />
 	<context:component-scan base-package="com.wuchao.webservice"/>
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
@@ -52,8 +58,6 @@
 
 	<!-- 导入bean配置文件xml -->
 	<import resource="classpath:/com/wuchao/test/product/springconfig/productbeans.xml" />
-	<!-- 
-	<import resource="classpath:/com/wuchao/config/webserviceConfig/serviceBeansConfig.xml" />
-	 -->
+
 
 </beans>
