@@ -65,7 +65,11 @@ public class LoginController{
     	session.setAttribute("user", user);
     	return "redirect:/home";
     }
-    
+    @RequestMapping("/logout")
+    public String logout(HttpServletResponse response,HttpServletRequest request,HttpSession session) throws DAOException {
+    	session.setAttribute("user", null);
+    	return "redirect:/login";
+    }
     /*
      * 请求index.jsp页面
      */

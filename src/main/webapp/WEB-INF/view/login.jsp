@@ -19,7 +19,6 @@
 body {
 	text-align: center
 }
-
 .div_form {
 	margin: 0 auto;
 	width: 600px;
@@ -46,7 +45,7 @@ body {
 						<td>
 						</td>
 						<td>
-							<font style="color:red">
+							<font style="color:#FFFF37">
 								<c:if test="${not empty formResult}">
  								 	${formResult} 
  								</c:if>
@@ -82,7 +81,7 @@ body {
 						</td>
 						<td>
 							<div class="layui-input-inline">
-								<input name="password" lay-verify="required" autocomplete="off"
+								<input id="password" name="password" lay-verify="required" autocomplete="off"
 									class="layui-input" type="password">
 							</div>
 						</td>
@@ -114,6 +113,7 @@ body {
 					</tr>
 				</tbody>
 			</table>
+			<input id="passwordMD5" style="display:none"/>
 			<div class='layui-main' style="width: 400px; height: 30px"></div>
 			<div class='layui-main' style="width: 400px; height: 30px">
 				<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
@@ -125,7 +125,7 @@ body {
 
 
 	<script src="/BlogProject/layui/layui.js" charset="utf-8"></script>
-	<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+	<script src="/BlogProject/js/Md5Util.js" charset="utf-8"></script>
 	<script>
 		layui
 				.use(
@@ -135,10 +135,8 @@ body {
 
 							//监听提交
 							form.on('submit(demo1)', function(data) {
-								window.location.href="/BlogProject/login?"
-										+"username="+data.field.username
-										+"&password="+data.field.password
-										+"&varifycode="+data.field.varifycode;
+								var password = hex_md5(data.field.password,32);
+								document.getElementById("password").value = password;
 								return true;
 							});
 
