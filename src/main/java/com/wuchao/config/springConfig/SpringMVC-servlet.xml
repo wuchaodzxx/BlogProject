@@ -12,7 +12,7 @@
                         http://www.springframework.org/schema/context 
                         http://www.springframework.org/schema/context/spring-context-4.0.xsd 
                         http://www.springframework.org/schema/aop 
-                        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
+                        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd                         
                         http://www.springframework.org/schema/tx 
                         http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
                         
@@ -24,7 +24,7 @@
      -->
     <mvc:annotation-driven />
     
-    
+
 	<context:component-scan base-package="com.wuchao.test">
     	<!-- 
     		Spring容器优先加载由ServletContextListener（对应ApplicationContext.xml）产生的父容器，
@@ -36,6 +36,9 @@
     	 -->
     	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" /> 
     </context:component-scan>
+	<context:component-scan base-package="com.wuchao.blog">
+    	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" /> 
+    </context:component-scan>    
     
     <bean id="viewResolver"  
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
@@ -48,9 +51,9 @@
         <!-- 定义异常处理页面用来获取异常信息的变量名，默认名为exception -->  
         <!--<property name="exceptionAttribute" value="ex"></property>-->  
         <property name="exceptionMappings">  
-            <props>  
-                <prop key="java.lang.Throwable">errors/500</prop>  
-                <prop key="com.nanri.utils.exception.DAOException">errors/dao_error</prop>  
+            <props>             
+                <prop key="com.wuchao.utils.exception.DAOException">errors/dao_error</prop>  
+                <prop key="java.lang.Throwable">errors/500</prop> 
             </props>              
         </property>  
     </bean>  

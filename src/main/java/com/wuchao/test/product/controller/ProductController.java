@@ -30,14 +30,4 @@ public class ProductController {
     
         return "add product successfull!";
     }
-    @RequestMapping("/errorException")
-    public String errorTest() throws Exception {
-    	log.info("Exception():");    	
-    	throw new Exception("Exception");
-    }
-    @RequestMapping("/errorDAO")
-    public String errorDAO() throws DAOException {
-    	log.info("errorDAO():");    	
-    	throw new DAOException();
-    }
 }

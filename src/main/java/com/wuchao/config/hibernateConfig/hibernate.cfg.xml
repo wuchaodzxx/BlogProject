@@ -9,10 +9,9 @@
 		<property name="show_sql">true</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="connection.autocommit">true</property>
-		
-		
+		<property name="hbm2ddl.auto">update</property>  
+
 		<mapping resource="com/wuchao/test/product/po/product.hbm.xml" />
-		
-		
+
 	</session-factory>
 </hibernate-configuration>

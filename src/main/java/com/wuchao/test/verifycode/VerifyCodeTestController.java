@@ -9,6 +9,6 @@ public class VerifyCodeTestController {
     @RequestMapping("/verifyCodeTest")
     public String test(Model model) {
     	
-        return "/verifyCodeTest";
+        return "/test/verifyCodeTest";
     }
 }

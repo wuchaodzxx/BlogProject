@@ -4,9 +4,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>错误</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="/BlogProject/layui/css/layui.css"
+	media="all">
+<link href="/BlogProject/resources/images/tagIco/error.png"
+	type="image/x-icon" rel="shortcut icon">
+<style>
+body {
+	text-align: center
+}
+</style>
 </head>
-<body>
-500錯誤
+<body class='layui-bg-black'>
+	<div class='layui-main' style="width: 700px; height: 150px">
+		
+		<div style="text-align:center;padding-top:100px">
+			<font style="color:#FFFFFF" size="200px">Code 500</font>
+		</div>
+		<br/><br/><br/><br/>
+		<img alt="" src="/BlogProject/resources/images/tagIco/error.png"/>
+		<font style="color:#FFFFFF" size="20px" >服务器内部发生错误！</font>
+	</div>
+<script type="text/javascript" color="255,255,255" opacity='0.7' zIndex="-2" count="200" src="/BlogProject/js/canvas-nest.js"></script>	
 </body>
 </html>

@@ -12,8 +12,7 @@
  
 	<bean id="userServiceBean" class="com.wuchao.test.webservice.ServiceImpl" />
 	<!-- 注意下面的address，这里的address的名称就是访问的WebService的name -->
-	<jaxws:server id="userService" serviceClass="com.wuchao.test.webservice.IService"
-		address="/Users">
+	<jaxws:server id="userService" serviceClass="com.wuchao.test.webservice.IService"	address="/Users">
 		<jaxws:serviceBean>
 			<!-- 要暴露的 bean 的引用 -->
 			<ref bean="userServiceBean" />

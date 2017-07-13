@@ -1,2 +1,3 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/wuchao/utils/string/StringUtils.java=GBK
 encoding//src/main/webapp/WEB-INF/view/errors/500.jsp=UTF-8

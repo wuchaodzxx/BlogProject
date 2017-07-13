@@ -37,6 +37,7 @@
 		<property name="configLocation">
 			<value>classpath:com/wuchao/config/hibernateConfig/hibernate.cfg.xml</value>
 		</property>
+		<property name="packagesToScan" value="com.wuchao.blog"/>
 	</bean>
 	<!-- 配置Spring声明式事务 -->
 	<bean id="transactionManager"
